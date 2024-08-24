@@ -10,5 +10,6 @@
 -------------------------------------------------------------------------------------------- */
 
 int main(void) {
+    // Indica que el programa ejecutó correctamente.
     return 0;
 }
