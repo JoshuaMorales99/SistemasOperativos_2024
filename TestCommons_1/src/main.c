@@ -5,7 +5,7 @@
 
     NOTA: Para mostrar lo que retorna el programa, procedemos de la siguiente manera. En consola:
         $ make all                      (Para compilar el proyecto)
-        $ ./bin/Ejercicio               (Para ejecutar el ejecutable 'Ejercicio')
+        $ ./bin/TestCommons_1           (Para ejecutar el ejecutable 'TestCommons_1')
 -------------------------------------------------------------------------------------------- */
 
 // Incluir las librerias necesarias.
