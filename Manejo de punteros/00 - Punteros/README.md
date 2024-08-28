@@ -129,5 +129,26 @@ int main(void){
 
 La regla de oro en la gestión de memoria dinámica es que cada llamada a `malloc` debe tener una llamada correspondiente a `free()`.
 
+## Otros métodos de asignación de memoria
+Además de `malloc`, existen otras funciones en C para la asignación de memoria dinámica:
+
+- `calloc(n, bytes)`: Reserva memoria para un array de `n` elementos, cada uno de `bytes` tamaño, e inicializa todos los bytes a `0`. Por ejemplo, para reservar memoria para un array de 5 enteros, se utilizaría:
+
+    ```c
+    int *arrayEnteros = calloc(5, sizeof(int));
+    ```
+
+    El uso de `calloc` asegura que la memoria asignada esté inicializada a cero, lo cual no ocurre con `malloc`.
+
+- `malloc(bytes)`: Reserva un bloque de memoria de `bytes` tamaño, pero no inicializa los bytes. El equivalente con `malloc` sería:
+
+    ```c
+    int *arrayEnteros = malloc(5 * sizeof(int));
+    ```
+
+- `realloc(*unPuntero, bytes)`: Ajusta el tamaño del bloque de memoria al que apunta `unPuntero` a un nuevo tamaño de `bytes`. Devuelve un puntero al bloque con el tamaño indicado. Es importante destacar que `realloc` intenta preservar los datos en el nuevo bloque siempre que el tamaño sea mayor o igual al original. Sin embargo, los bytes adicionales no están inicializados. Hay que tener en cuenta los siguientes casos especiales:
+    - Si `unPuntero` es `NULL`, `realloc` se comporta como `malloc(bytes)`.
+    - Si `unPuntero` no es `NULL` y `bytes` es `0`, `realloc` se comporta como `free(unPuntero)`.
+
 # Bibliografía
 [Manejo de punteros](https://docs.utnso.com.ar/guias/programacion/punteros)
