@@ -1,0 +1,10 @@
+{ 
+    // Definir la acción a realizar en caso de que alguna tarea previa a ejecutar el debugger falle.
+    "debug.onTaskErrors": "abort",
+
+    // Para que el editor reconozca todos los archivos *.h como código C.
+    "files.associations": {"*.h": "c"},
+
+    // Deshabilitar algunos mensajes de error que nos pueden llegar a aparecer por utilizar algunas features de gcc que son válidas pero no forman parte del estándar de C.
+    "C_Cpp.errorSquiggles": "disabled"
+} 
